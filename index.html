@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  
+</body> <h1>Gestión de Alumnos</h1>
+
+<h2>Alta de Alumnos</h2>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre">
+<label for="apellidos">Apellidos:</label>
+<input type="text" id="apellidos">
+<label for="edad">Edad:</label>
+<input type="number" id="edad">
+<button onclick="agregarAlumno()">Agregar Alumno</button>
+
+<h2>Asignar Calificaciones</h2>
+<label for="alumno">Alumno:</label>
+<select id="alumno"></select>
+<label for="materia">Materia:</label>
+<input type="text" id="materia">
+<label for="calificacion">Calificación:</label>
+<input type="number" id="calificacion">
+<button onclick="asignarCalificacion()">Asignar Calificación</button>
+
+<h2>Crear Grupo</h2>
+<label for="grupo">Nombre del Grupo:</label>
+<input type="text" id="grupo">
+<button onclick="crearGrupo()">Crear Grupo</button>
+
+<h2>Búsqueda de Alumnos</h2>
+<label for="buscarNombre">Buscar por Nombre:</label>
+<input type="text" id="buscarNombre">
+<button onclick="buscarPorNombre()">Buscar</button>
+
+<label for="buscarApellido">Buscar por Apellido:</label>
+<input type="text" id="buscarApellido">
+<button onclick="buscarPorApellido()">Buscar</button>
+
+<h2>Promedio de Alumnos</h2>
+<label for="promedioAlumno">Promedio del Alumno:</label>
+<select id="promedioAlumno"></select>
+<button onclick="calcularPromedioAlumno()">Calcular Promedio</button>
+
+<label for="promedioGrupo">Promedio del Grupo:</label>
+<select id="promedioGrupo"></select>
+<button onclick="calcularPromedioGrupo()">Calcular Promedio</button>
+
+<h2>Lista de Alumnos</h2>
+<label for="ordenamiento">Ordenamiento:</label>
+<select id="ordenamiento">
+  <option value="ascendente">Ascendente</option>
+  <option value="descendente">Descendente</option>
+</select>
+<button onclick="ordenarAlumnos()">Ordenar</button>
+
+<ul id="listaAlumnos"></ul>
+
+<script src="main.js"></script>
+</html>
