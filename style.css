@@ -1,20 +1,197 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    align-items: center;
+/* =========================================
+   VARIABLES DE COLOR Y FUENTE
+   ========================================= */
+:root {
+  --primary-color: #a60a3d; /* Un rojo oscuro institucional */
+  --primary-hover: #83072f;
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --border-color: #e0e0e0;
+  --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-  label {
-    display: block;
-    margin-top: 10px;
-  }
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  input[type="text"],
-  input[type="number"] {
-    width: 200px;
-  }
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 20px;
+}
 
-  button {
-    margin-top: 10px;
-  }
+/* =========================================
+   LAYOUT PRINCIPAL
+   ========================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+.header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* EL GRID RESPONSIVO: La clave de la magia */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna en celulares */
+  gap: 25px;
+}
+
+/* Para tablets y pantallas medianas (2 columnas) */
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Para computadoras grandes (3 columnas) */
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================
+   TARJETAS (CARDS)
+   ========================================= */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+/* =========================================
+   FORMULARIOS (Inputs, Labels, Selects)
+   ========================================= */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(166, 10, 61, 0.15); /* Resplandor al hacer clic */
+}
+
+/* Contenedor para input + botón en la misma línea */
+.input-action {
+  display: flex;
+  gap: 10px;
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Botón secundario para las búsquedas */
+.btn-secondary {
+  width: auto;
+  background-color: var(--text-muted);
+  margin-top: 0;
+}
+
+.btn-secondary:hover {
+  background-color: var(--text-main);
+}
+
+/* =========================================
+   LISTA DE ALUMNOS (Estilos de resultados)
+   ========================================= */
+.student-list {
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.student-list li {
+  background-color: var(--bg-color);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 4px solid var(--primary-color);
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  border-left: none !important;
+  background-color: transparent !important;
+}
